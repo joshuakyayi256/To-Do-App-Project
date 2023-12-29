@@ -4,7 +4,6 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 
 const TaskInput = ({ addTask }) => {
-    // component code here
 
     const [task, setTask] = useState("");
     console.log(task);
