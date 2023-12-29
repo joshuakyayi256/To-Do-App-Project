@@ -1,8 +1,11 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 const TaskInput = ({ addTask }) => {
+    // component code here
+
     const [task, setTask] = useState("");
     console.log(task);
 
@@ -17,17 +20,22 @@ const TaskInput = ({ addTask }) => {
         setTask("");
     }
 
-  return (
-    <form className="inputField" 
-        onSubmit={handleAddTask}>
-        <input type="text" 
-        value={task} 
-        placeholder="Add a task"  
-        onChange={handleInputValue} />
-        
-        <button>+</button>
-    </form>
-  );
+    return (
+        <form className="inputField" onSubmit={handleAddTask}>
+            <input
+                type="text"
+                value={task}
+                placeholder="Add a task"
+                onChange={handleInputValue}
+            />
+
+            <button>+</button>
+        </form>
+    );
+};
+
+TaskInput.propTypes = {
+    addTask: PropTypes.func.isRequired,
 };
 
 export default TaskInput;
