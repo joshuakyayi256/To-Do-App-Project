@@ -11,8 +11,18 @@ function App() {
   };
 
   function deletTask(deletTask) {
-    setToDoList(toDoList.filter(task=> task.taskName !== deletTask.taskName));
+    setToDoList(toDoList.filter(task=> 
+      task.taskName !== deletTask.taskName));
   }
+
+  function toggleCheck (taskName) {
+    setToDoList((prevToDoList) => prevToDoList.map
+    (task => task.taskName === taskName ? {...task,
+     checked: !task.checked} : task,
+     ),
+    );
+  }
+
 console.log(toDoList);
   return (
     <>
@@ -27,7 +37,7 @@ console.log(toDoList);
            <ul className='list-items'>
             {toDoList.map ((task, key) => (
               <TaskItem task={task} key={key}
-              deletTask={deletTask} />
+              deletTask={deletTask} toggleCheck={toggleCheck} />
               ))}
            </ul>
 
