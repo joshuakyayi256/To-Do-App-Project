@@ -38,10 +38,11 @@ function App() {
               ))}
            </ul>
 
-           {toDoList.length ===0 ? (
+           
+        </div>
+        {toDoList.length ===0 ? (
              <p className='notify'>You are done!</p>
              ) : null}
-        </div>
       </div>
       <Stats toDoList={toDoList} />
     </>

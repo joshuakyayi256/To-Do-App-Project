@@ -4,7 +4,7 @@ const Stats = ({toDoList}) => {
     return (
         <div className='stats'>
             <p className='notify'>
-                {countList ===0 ? 'You have got everything done!' : `You have ${countList} tasks on your list`}
+                {countList === 0 ? 'You have got everything done!' : `You have ${countList} tasks on your list`}
             </p>
         </div>
     )
